@@ -1,14 +1,26 @@
 {
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs = {
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  };
   outputs =
-    { self, nixpkgs }:
+    {
+      self,
+      nixpkgs,
+      nix-index-database,
+      ...
+    }:
     {
 
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
 
-      # replace 'joes-desktop' with your hostname here.
       nixosConfigurations.coco = nixpkgs.lib.nixosSystem {
-        modules = [ ./configuration.nix ];
+        modules = [
+          ./configuration.nix
+          nix-index-database.nixosModules.default
+          { programs.nix-index-database.comma.enable = true; }
+        ];
       };
     };
 }
