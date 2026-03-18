@@ -17,7 +17,7 @@
       discord
       openrgb-with-all-plugins
       signal-desktop
-
+      chromium
       (anki.withAddons (
         with ankiAddons;
         [
