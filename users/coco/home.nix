@@ -14,8 +14,6 @@
 
     plugins = [
       {
-	name ""
-
 
         name = "zsh-autocomplete";
         src = pkgs.fetchFromGitHub {
