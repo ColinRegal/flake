@@ -6,6 +6,11 @@
 
 {
 
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
+
   nix = {
     optimise.automatic = true;
 
@@ -42,11 +47,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -114,37 +114,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.coco = {
-    isNormalUser = true;
-    description = "coco";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    packages = with pkgs; [
-      discord
-      chromium
-      openrgb
-      signal-desktop
-
-      (anki.withAddons (
-        with ankiAddons;
-        [
-          passfail2
-          anki-connect
-          #(recolor.withConfig {
-          #  config = builtins.fromJSON (builtins.readFile ./anki/mocha.json);
-          #})
-          # AJT doesn't exist, code: 13444852330
-        ]
-      ))
-    ];
-  };
-
-  programs.firefox = {
-    enable = true;
-  };
   # Install and configure chromium
   programs.chromium = {
     enable = true;
@@ -174,12 +143,14 @@
     };
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  users.defaultUserShell = pkgs.zsh;
+
+  # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     git
-    #  wget
+    alacritty
+    kitty
   ];
 
   # Open ports in the firewall.
