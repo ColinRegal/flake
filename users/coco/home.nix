@@ -19,22 +19,26 @@
   programs.alacritty.enable = true;
 
   programs.chromium.enable = true;
-/*
+
+  programs.btop.enable = true;
+
   programs.anki = {
     enable = true;
+    language = "fr_FR";
     addons = [
       pkgs.ankiAddons.passfail2
       pkgs.ankiAddons.anki-connect
     ];
   };
-*/
+
   home.packages = with pkgs; [
     discord
   ];
 
   programs.zsh = {
     enable = true;
-
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
     plugins = [
 
     ];

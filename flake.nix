@@ -6,6 +6,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
+    catppuccin.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs =
     inputs@{
@@ -26,6 +27,8 @@
           { programs.nix-index-database.comma.enable = true; }
 
           catppuccin.nixosModules.catppuccin
+          { catppuccin.enable = true; }
+
           ./users/coco/default.nix
           inputs.home-manager.nixosModules.home-manager
 
