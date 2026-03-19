@@ -5,12 +5,14 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    catppuccin.url = "github:catppuccin/nix";
   };
   outputs =
     inputs@{
       self,
       nixpkgs,
       nix-index-database,
+      catppuccin,
       ...
     }:
     {
@@ -23,6 +25,7 @@
           nix-index-database.nixosModules.default
           { programs.nix-index-database.comma.enable = true; }
 
+          catppuccin.nixosModules.catppuccin
           ./users/coco/default.nix
           inputs.home-manager.nixosModules.home-manager
 
@@ -36,6 +39,7 @@
                 nix-index-database.homeModules.nix-index
                 # actual user module
                 ./users/coco/home.nix
+                catppuccin.homeModules.catppuccin
               ];
             };
 

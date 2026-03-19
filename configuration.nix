@@ -142,15 +142,13 @@
 
     };
   };
-
   users.defaultUserShell = pkgs.zsh;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim
     git
-    alacritty
-    kitty
+    home-manager
   ];
 
   # Open ports in the firewall.
