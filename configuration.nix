@@ -91,15 +91,14 @@
     xwayland.enable = true; # Xwayland can be disabled.
   };
 
-
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-/*
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "fr";
-    variant = "";
-  };
-*/
+  /*
+    # Configure keymap in X11
+    services.xserver.xkb = {
+      layout = "fr";
+      variant = "";
+    };
+  */
   # Configure console keymap
   console.keyMap = "fr";
 

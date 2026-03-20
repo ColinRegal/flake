@@ -73,62 +73,58 @@
     enable = true;
     systemd.enable = false;
 
-    settings = {
-      extraConfig = ''
-     	input {
-            	kb_layout = fr
-            	kb_variant =
+    extraConfig = ''
+            	input {
+		kb_layout = us
+      		kb_variant =
       		kb_model =
-       		kb_options =
-            	kb_rules =
+      		kb_options =
+      		kb_rules =
 
-            	follow_mouse = 1
+      		follow_mouse = 1
 
-            	sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+      		sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 
-            	touchpad {
-                	natural_scroll = false
-            	}
-        }
+      		touchpad {
+      			natural_scroll = false
+      		}
+      	}
+            	$mod = ALT
 
-	"$mod" = "ALT";
+            	# Misc
+            	bind = $mod, R, exec, hyprlauncher
+            	bind = $mod, T, exec, ghostty
+            	bind = $mod, F, exec, fullscreen
+            	bind = $mod, A, exec, killactive
+                                		
+            	# Windows managing
+            	bind = $mod, left, movefocus, l
+            	bind = $mod, right, movefocus, r
+            	bind = $mod, up, movefocus, u
+            	bind = $mod, down, movefocus, d
 
-	# Misc
-        $mod, R, exec, hyprlauncher
-       	$mod, T, exec, ghostty
-        $mod, F, exec, fullscreen
-        $mod, A, exec, killactive
-		
-	# Windows managing
-        $mod, left, movefocus, l
-       	$mod, right, movefocus, r
-        $mod, up, movefocus, u
-        $mod, down, movefocus, d
+            	# Workspace managing
+            	bind = $mod, 1, workspace, &
+            	bind = $mod, 2, workspace, é
+            	bind = $mod, 3, workspace, 3
+            	bind = $mod, 4, workspace, 4
+            	bind = $mod, 5, workspace, (
+            	bind = $mod, 6, workspace, -
+            	bind = $mod, 7, workspace, è
+            	bind = $mod, 8, workspace, _
+            	bind = $mod, 9, workspace, ç
+            	bind = $mod, 0, workspace, à
 
-	# Workspace managing
-        $mod, 1, workspace, &
-        $mod, 2, workspace, é
-        $mod, 3, workspace, 3
-        $mod, 4, workspace, 4
-        $mod, 5, workspace, (
-        $mod, 6, workspace, -
-        $mod, 7, workspace, è
-        $mod, 8, workspace, _
-        $mod, 9, workspace, ç
-        $mod, 0, workspace, à
-
-        $mod SHIFT, 1, movetoworkspace, &
-        $mod SHIFT, 2, movetoworkspace, é
-        $mod SHIFT, 3, movetoworkspace, 3
-        $mod SHIFT, 4, movetoworkspace, 4
-        $mod SHIFT, 5, movetoworkspace, (
-        $mod SHIFT, 6, movetoworkspace, -
-        $mod SHIFT, 7, movetoworkspace, è
-        $mod SHIFT, 8, movetoworkspace, _
-        $mod SHIFT, 9, movetoworkspace, ç
-        $mod SHIFT, 0, movetoworkspace, à
-      '';
-    };
+            	bind = $mod SHIFT, 1, movetoworkspace, &
+            	bind = $mod SHIFT, 2, movetoworkspace, é
+            	bind = $mod SHIFT, 3, movetoworkspace, 3
+            	bind = $mod SHIFT, 4, movetoworkspace, 4
+            	bind = $mod SHIFT, 5, movetoworkspace, (
+            	bind = $mod SHIFT, 6, movetoworkspace, -
+            	bind = $mod SHIFT, 7, movetoworkspace, è
+            	bind = $mod SHIFT, 8, movetoworkspace, _
+            	bind = $mod SHIFT, 9, movetoworkspace, ç
+            	bind = $mod SHIFT, 0, movetoworkspace, à
+    '';
   };
-
 }
