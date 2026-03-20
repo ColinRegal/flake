@@ -16,7 +16,7 @@
 
   catppuccin = {
     enable = true;
-    flavor = "mocha";
+    flavor = "latte";
   };
 
   programs.ghostty.enable = true;
@@ -27,13 +27,11 @@
   programs.anki = {
     enable = true;
     language = "fr_FR";
-    profiles."coco" = {
-      sync = {
-        autoSync = true;
-        syncMedia = true;
-        usernameFile = "/home/coco/dotfiles/anki/username";
-        keyFile = "/home/coco/dotfiles/anki/key";
-      };
+    sync = {
+      autoSync = true;
+      syncMedia = true;
+      usernameFile = "/home/coco/dotfiles/anki/username";
+      keyFile = "/home/coco/dotfiles/anki/key";
     };
     addons = [
       pkgs.ankiAddons.passfail2
@@ -48,6 +46,7 @@
     hyprpanel
     hyprlauncher
     fastfetch
+figlet
   ];
 
   programs.zsh = {
