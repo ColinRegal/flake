@@ -79,14 +79,11 @@
     LC_TELEPHONE = "fr_FR.UTF-8";
     LC_TIME = "fr_FR.UTF-8";
   };
-/*
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-*/
+  services.displayManager.sddm.enable = true;
+  services.displayManager.defaultSession = "hyprland";
 
   programs.hyprland = {
     enable = true;
