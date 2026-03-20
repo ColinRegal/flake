@@ -19,6 +19,15 @@
     flavor = "mocha";
   };
 
+  home.packages = with pkgs; [
+    discord
+    rofi
+    hyprlock
+    hyprpanel
+    hyprlauncher
+    fastfetch
+  ];
+
   programs.ghostty.enable = true;
   programs.alacritty.enable = true;
   programs.chromium.enable = true;
@@ -40,15 +49,6 @@
       pkgs.ankiAddons.anki-connect
     ];
   };
-
-  home.packages = with pkgs; [
-    discord
-    rofi
-    hyprlock
-    hyprpanel
-    hyprlauncher
-    fastfetch
-  ];
 
   programs.zsh = {
     enable = true;
