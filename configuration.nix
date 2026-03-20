@@ -79,20 +79,30 @@
     LC_TELEPHONE = "fr_FR.UTF-8";
     LC_TIME = "fr_FR.UTF-8";
   };
-
+/*
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+*/
 
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true; # recommended for most users
+    xwayland.enable = true; # Xwayland can be disabled.
+  };
+
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+/*
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "fr";
     variant = "";
   };
-
+*/
   # Configure console keymap
   console.keyMap = "fr";
 
@@ -110,9 +120,6 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Install and configure chromium
   programs.chromium = {
@@ -149,6 +156,7 @@
     vim
     git
     home-manager
+    kitty
   ];
 
   # Open ports in the firewall.
