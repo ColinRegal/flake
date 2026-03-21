@@ -80,6 +80,17 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
+  fonts = {
+    enableDefaultPackages = true;
+
+    packages = with pkgs; [
+      font-awesome
+      nerd-fonts.noto
+      noto-fonts-cjk-sans
+    ];
+
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
