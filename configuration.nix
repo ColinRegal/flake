@@ -95,6 +95,8 @@
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.defaultSession = "hyprland";
+  services.displayManager.sddm.autoNumlock = true;
+
 
   programs.hyprland = {
     enable = true;
@@ -104,7 +106,10 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal"
+  ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -129,6 +134,9 @@ environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.hyprland.enableGnomeKeyring = true;
 
   # Install and configure chromium
   programs.chromium = {
