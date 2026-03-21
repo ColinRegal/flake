@@ -30,7 +30,7 @@
     kdePackages.dolphin
     waypaper
     hyprpaper
-    zed
+    vscode
   ];
 
   programs.ghostty.enable = true;
