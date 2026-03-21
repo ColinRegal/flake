@@ -10,22 +10,27 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
     TERM = "ghostty";
   };
 
   catppuccin = {
     enable = true;
     flavor = "mocha";
+    accent = "mauve";
   };
 
   home.packages = with pkgs; [
     discord
+    catppuccin-discord
     rofi
     hyprpanel
     hyprlauncher
     fastfetch
     kdePackages.dolphin
+    waypaper
+    hyprpaper
+    zed
   ];
 
   programs.ghostty.enable = true;
@@ -33,6 +38,7 @@
   programs.chromium.enable = true;
   programs.btop.enable = true;
   programs.hyprlock.enable = true;
+  programs.neovim.enable = true;
 
   programs.anki = {
     enable = true;
@@ -81,16 +87,62 @@
     };
   };
 
+services.hyprpaper = {
+  enable = true;
+  settings = {
+    preload = [
+      "~/wallpaper/wolf_forest.jpg"
+      "~/wallpaper/purple_nix.jpg"
+    ];
+    wallpaper = [
+      # By display
+      #"DP-2,~/wallpapers/wallpaper2.jpg"
+      # By default/fallback
+      "~/dotfile/wallpaper/purple_nix.jpg"
+    ];
+  };
+};
+
   wayland.windowManager.hyprland = {
     enable = true;
-	# xwayland.enable = true;
     systemd.enable = false;
 
     extraConfig = ''
-      monitor = DP-3, 3440x1440@164.90Hz,0x0,1	
+      monitor = DP-3, 3440x1440@164.90Hz,0x0,1
+
+      exec-once = hyprpaper &
+
+general {
+	col.active_border = $accent $surface1 45deg
+        col.inactive_border = $surface0
+	resize_on_border = false
+	border_size = 2
+
+}
 
 decoration {
 	rounding = 10
+	# Change transparency of focused and unfocused windows
+    active_opacity = 1
+    inactive_opacity = 1
+
+    shadow {
+              enabled = true
+              range = 15
+              render_power = 3
+              # L'ombre utilise la couleur la plus sombre du thème (crust ou mantle)
+              color = $crust
+              # Tu peux aussi l'adoucir un peu avec une couleur "base"
+              # color = $base
+          }
+
+blur {
+              enabled = true
+              size = 4
+              passes = 2
+              new_optimizations = true
+              ignore_opacity = true
+          }
 
 }
 
@@ -127,6 +179,7 @@ animations {
 
 misc {
 	disable_hyprland_logo = true
+	disable_splash_rendering = true
 }
 
       input {

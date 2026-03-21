@@ -99,10 +99,12 @@
   programs.hyprland = {
     enable = true;
     withUWSM = true; # recommended for most users
-    # xwayland.enable = true; # Xwayland can be disabled.
+    xwayland.enable = true; # Xwayland can be disabled.
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
