@@ -138,9 +138,9 @@
   security.pam.services.hyprland.enableGnomeKeyring = true;
 
   services.hardware.openrgb = {
-  enable = true;
-  startupProfile = "keyboard_purple_white.orp";
-};
+    enable = true;
+    startupProfile = "keyboard_purple_white.orp";
+  };
   # Install and configure chromium
   programs.chromium = {
     enable = true;
