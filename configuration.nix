@@ -137,8 +137,10 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
 
-  services.hardware.openrgb.enable = true;
-
+  services.hardware.openrgb = {
+  enable = true;
+  startupProfile = "keyboard_purple_white.orp";
+};
   # Install and configure chromium
   programs.chromium = {
     enable = true;
@@ -174,7 +176,8 @@
     vim
     git
     home-manager
-    kitty
+    openrazer-daemon
+    polychromatic
   ];
 
   # Open ports in the firewall.

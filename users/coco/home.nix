@@ -107,6 +107,7 @@
             monitor = DP-3, 3440x1440@164.90Hz,0x0,1
 
             exec-once = hyprpaper &
+	    exec-once = openrazer 
 
       general {
       	col.active_border = $accent $surface1 45deg
