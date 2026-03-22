@@ -97,7 +97,6 @@
   services.displayManager.defaultSession = "hyprland";
   services.displayManager.sddm.autoNumlock = true;
 
-
   programs.hyprland = {
     enable = true;
     withUWSM = true; # recommended for most users

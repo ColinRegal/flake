@@ -90,15 +90,11 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [
-        "~/wallpaper/wolf_forest.jpg"
-        "~/wallpaper/purple_nix.jpg"
-      ];
       wallpaper = [
-        # By display
-        #"DP-2,~/wallpapers/wallpaper2.jpg"
-        # By default/fallback
-        "~/dotfile/wallpaper/purple_nix.jpg"
+        {
+          monitor = "";
+          path = "~/dotfiles/wallpaper/wolf_forest.jpg";
+        }
       ];
     };
   };
