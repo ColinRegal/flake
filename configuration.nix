@@ -137,6 +137,8 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
 
+  services.hardware.openrgb.enable = true;
+
   # Install and configure chromium
   programs.chromium = {
     enable = true;
