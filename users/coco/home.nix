@@ -18,19 +18,22 @@
     enable = true;
     flavor = "mocha";
     accent = "mauve";
+    cursors.enable = true;
   };
 
   home.packages = with pkgs; [
-    discord
     catppuccin-discord
-    rofi
-    hyprpanel
-    hyprlauncher
+    brightnessctl
+    discord
     fastfetch
-    kdePackages.dolphin
-    waypaper
+    hyprpanel
     hyprpaper
+    hyprlauncher
+    kdePackages.dolphin
+    playerctl
+    rofi
     vscode
+    waypaper
   ];
 
   programs.ghostty.enable = true;
@@ -108,7 +111,7 @@
 
                   exec-once = hyprpaper &
       	    exec-once = openrazer 
-
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
             general {
             	col.active_border = $accent $surface1 45deg
                     col.inactive_border = $surface0
@@ -179,6 +182,8 @@
             	disable_splash_rendering = true
             }
 
+	            env = XCURSOR_SIZE,24
+
                   input {
                     kb_layout = fr
                     kb_variant =
@@ -237,6 +242,22 @@
 
                   bindm = $mod, mouse:272, movewindow
                   bindm = $mod, mouse:273, resizewindow
+
+# Laptop multimedia keys for volume and LCD brightness
+bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindel = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindel = ,XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+
+bindel = ,XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-
+
+# Requires playerctl
+bindl = , XF86AudioNext, exec, playerctl next
+bindl = , XF86AudioPause, exec, playerctl play-pause
+bindl = , XF86AudioPlay, exec, playerctl play-pause
+bindl = , XF86AudioPrev, exec, playerctl previous
+
+
     '';
   };
 }
