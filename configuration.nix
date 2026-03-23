@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
 
@@ -134,6 +139,9 @@
     #media-session.enable = true;
   };
 
+  services.upower.enable = true;
+  services.tuned.enable = true;
+
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
 
@@ -178,6 +186,7 @@
     home-manager
     openrazer-daemon
     polychromatic
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   # Open ports in the firewall.
