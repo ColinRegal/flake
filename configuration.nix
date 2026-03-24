@@ -100,8 +100,9 @@
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.defaultSession = "hyprland";
-  services.displayManager.sddm.autoNumlock = true;
+  services.displayManager.sddm.autoNumlock = false;
 
+  # Hyprland setup
   programs.hyprland = {
     enable = true;
     withUWSM = true; # recommended for most users
@@ -138,17 +139,21 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
+  
+  # Services for nocatlia
   services.upower.enable = true;
   services.tuned.enable = true;
 
+  # I don't remember ff
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
 
+  # OpenRGB configuration
   services.hardware.openrgb = {
     enable = true;
     startupProfile = "keyboard_purple_white.orp";
   };
+
   # Install and configure chromium
   programs.chromium = {
     enable = true;
