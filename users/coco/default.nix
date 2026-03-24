@@ -14,11 +14,6 @@
       "wheel"
       "openrazer"
     ];
-    packages = with pkgs; [
-      openrgb-with-all-plugins
-      signal-desktop
-      bitwarden-desktop
-    ];
   };
 
 }

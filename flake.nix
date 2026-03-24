@@ -29,7 +29,6 @@
       ...
     }:
     {
-
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
 
       nixosConfigurations.coco = nixpkgs.lib.nixosSystem {
@@ -57,6 +56,8 @@
                 # actual user module
                 ./users/coco/home.nix
                 catppuccin.homeModules.catppuccin
+
+	        ./modules/home-manager
               ];
             };
 
