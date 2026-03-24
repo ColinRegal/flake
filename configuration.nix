@@ -139,7 +139,7 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-  
+
   # Services for nocatlia
   services.upower.enable = true;
   services.tuned.enable = true;

@@ -2,15 +2,15 @@
 
 {
   imports = [
-   ./alacritty
-  ./anki
-   ./btop
+    ./alacritty
+    ./anki
+    ./btop
     ./catppuccin
-./chromium
+    ./chromium
     ./ghostty
-   ./hyprland
-   ./neovim
-   ./starship
-   ./zsh
+    ./hyprland
+    ./neovim
+    ./starship
+    ./zsh
   ];
 }
