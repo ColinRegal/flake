@@ -443,14 +443,14 @@
             action = "suspend";
             command = "";
             countdownEnabled = false;
-            enabled = false;
+            enabled = true;
             keybind = "";
           }
           {
             action = "hibernate";
             command = "";
             countdownEnabled = false;
-            enabled = true;
+            enabled = false;
             keybind = "2";
           }
           {
