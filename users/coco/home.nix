@@ -22,6 +22,8 @@
     discord
     fastfetch
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    python314
+    qimgv
     signal-desktop
     silver-searcher
     vscode
