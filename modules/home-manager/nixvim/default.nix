@@ -4,6 +4,7 @@
 
   programs.nixvim = {
     enable = true;
+    colorschemes.catppuccin.enable = true;
     opts = {
       # Use system clipboard
       clipboard = "unnamedplus";
