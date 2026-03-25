@@ -1,21 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
-  inputs,
-  config,
-  pkgs,
-  ...
-}:
-
-{
-
-  environment.pathsToLink = [
-    "/share/applications"
-    "/share/xdg-desktop-portal"
-  ];
-
   # Install and configure chromium
   programs.chromium = {
     enable = true;
@@ -44,5 +27,4 @@
 
     };
   };
-
 }
