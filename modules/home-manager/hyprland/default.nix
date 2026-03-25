@@ -2,20 +2,14 @@
 
 {
   imports = [
-    ./hyprlock.nix
-    ./hyprpaper.nix
     ./noctalia.nix
   ];
 
   home.packages = with pkgs; [
     brightnessctl
-    hyprlauncher
-    hyprpanel
-    hyprpaper
+    hyprshot
     kdePackages.dolphin
     playerctl
-    rofi
-    waypaper
   ];
 
   wayland.windowManager.hyprland = {
@@ -25,7 +19,6 @@
     extraConfig = ''
       monitor = DP-3, 3440x1440@164.90Hz,0x0,1
 
-      exec-once = hyprpaper &
       exec-once = openrazer 
       exec-once = noctalia-shell &
       exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -112,15 +105,17 @@
       }
 
       $mod = ALT
+      $ipc = noctalia-shell ipc call
 
       # Misc
-      bind = $mod, D, exec, hyprlauncher
+      bind = $mod, D, exec, $ipc launcher toggle
+      bind = SUPER, , exec, $ipc launcher toggle
       bind = $mod, RETURN, exec, ghostty
       bind = $mod, F, fullscreen,
       bind = $mod, A, killactive,
       bind = $mod, E, exec, dolphin
       bind = $mod, V, togglefloating,
-      bind = $mod, L, exec, hyprlock
+      bind = $mod, L, exec, $ipc lockScreen lock
                         
       # Windows managing
       bind = $mod, left, movefocus, l
