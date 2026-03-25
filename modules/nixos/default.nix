@@ -4,6 +4,7 @@
   imports = [
     ./audio.nix
     ./boot.nix
+    ./chromium.nix
     ./desktop.nix
     ./fonts.nix
     ./keyring.nix

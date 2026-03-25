@@ -140,16 +140,16 @@
       bind = $mod, ccedilla, workspace, 9
       bind = $mod, agrave, workspace, 10
 
-      bind = $mod SHIFT, ampersand, movetoworkspace, 1
-      bind = $mod SHIFT, eacute, movetoworkspace, 2
-      bind = $mod SHIFT, quotedbl, movetoworkspace, 3
-      bind = $mod SHIFT, apostrophe, movetoworkspace, 4
-      bind = $mod SHIFT, parenleft, movetoworkspace, 5
-      bind = $mod SHIFT, minus, movetoworkspace, 6
-      bind = $mod SHIFT, egrave, movetoworkspace, 7
-      bind = $mod SHIFT, underscore, movetoworkspace, 8
-      bind = $mod SHIFT, ccedilla, movetoworkspace, 9
-      bind = $mod SHIFT, agrave, movetoworkspace, 10
+      bind = $mod SHIFT, ampersand, movetoworkspacesilent, 1
+      bind = $mod SHIFT, eacute, movetoworkspacesilent, 2
+      bind = $mod SHIFT, quotedbl, movetoworkspacesilent, 3
+      bind = $mod SHIFT, apostrophe, movetoworkspacesilent, 4
+      bind = $mod SHIFT, parenleft, movetoworkspacesilent, 5
+      bind = $mod SHIFT, minus, movetoworkspacesilent, 6
+      bind = $mod SHIFT, egrave, movetoworkspacesilent, 7
+      bind = $mod SHIFT, underscore, movetoworkspacesilent, 8
+      bind = $mod SHIFT, ccedilla, movetoworkspacesilent, 9
+      bind = $mod SHIFT, agrave, movetoworkspacesilent, 10
 
       bindm = $mod, mouse:272, movewindow
       bindm = $mod, mouse:273, resizewindow
