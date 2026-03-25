@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 
@@ -18,10 +19,9 @@
 
   home.packages = with pkgs; [
     bitwarden-desktop
-    catppuccin-discord
     discord
     fastfetch
-    openrgb-with-all-plugins
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     signal-desktop
     silver-searcher
     vscode

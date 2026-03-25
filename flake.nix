@@ -50,7 +50,9 @@
         specialArgs = { inherit inputs; };
         modules = [
 
-          ./configuration.nix
+          ./modules/nixos
+          ./hosts/gaming_computer
+
           nix-index-database.nixosModules.default
           { programs.nix-index-database.comma.enable = true; }
 

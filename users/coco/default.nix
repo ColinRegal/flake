@@ -8,7 +8,7 @@
   users.users.coco = {
     isNormalUser = true;
     description = "coco";
-    useDefaultShell = true;
+    shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
       "wheel"
