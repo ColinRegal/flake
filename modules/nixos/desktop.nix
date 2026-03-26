@@ -1,5 +1,8 @@
 {
 
+# /etc/nixos/configuration.nix
+programs.dconf.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;

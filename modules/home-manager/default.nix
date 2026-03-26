@@ -8,6 +8,7 @@
     ./catppuccin
     ./chromium
     ./ghostty
+    ./gtk
     ./hyprland
     ./nixvim
     ./starship

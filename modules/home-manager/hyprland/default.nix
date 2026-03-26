@@ -8,7 +8,7 @@
   home.packages = with pkgs; [
     brightnessctl
     hyprshot
-    kdePackages.dolphin
+    nautilus
     playerctl
   ];
 
@@ -113,7 +113,7 @@
       bind = $mod, RETURN, exec, ghostty
       bind = $mod, F, fullscreen,
       bind = $mod, A, killactive,
-      bind = $mod, E, exec, dolphin
+      bind = $mod, E, exec, nautilus
       bind = $mod, V, togglefloating,
       bind = $mod, L, exec, $ipc lockScreen lock
                         
