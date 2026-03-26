@@ -297,7 +297,6 @@
         clipboardWatchTextCommand = "wl-paste --type text --watch cliphist store";
         clipboardWatchImageCommand = "wl-paste --type image --watch cliphist store";
         position = "top_center";
-        pinnedApps = [ "discord" ];
         sortByMostUsed = true;
         terminalCommand = "ghostty -e";
         customLaunchPrefixEnabled = false;
