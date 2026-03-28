@@ -1,5 +1,4 @@
 {
-
   programs.dconf.enable = true;
 
   # Enable the X11 windowing system.

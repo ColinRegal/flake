@@ -15,6 +15,8 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     TERM = "ghostty";
+    QT_QPA_PLATFORMTHEME="gtk3";
+
   };
 
   home.packages = with pkgs; [
@@ -27,6 +29,7 @@
     signal-desktop
     silver-searcher
     vscode
+    xdg-desktop-portal-gtk
   ];
 
 }
