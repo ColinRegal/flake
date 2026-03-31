@@ -24,6 +24,8 @@
       exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
       general {
+        gaps_in = 5
+        gaps_out = 10
         col.active_border = $accent $surface1 45deg
         col.inactive_border = $surface0
         resize_on_border = false

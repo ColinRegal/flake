@@ -30,7 +30,8 @@
         frameRadius = 12;
         outerCorners = true;
         hideOnOverview = false;
-        displayMode = "always_visible";
+        # displayMode = "always_visible";
+        displayMode = "auto_hide";
         autoHideDelay = 500;
         autoShowDelay = 150;
         showOnWorkspaceSwitch = true;
